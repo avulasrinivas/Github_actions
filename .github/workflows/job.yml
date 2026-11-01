@@ -1,0 +1,21 @@
+name: Simple Demo Workflow
+
+# The event that triggers the workflow
+on: [push]
+
+# The automation logic
+jobs:
+  say-hello:
+    # The type of virtual machine the job runs on
+    runs-on: ubuntu-latest
+
+    # The sequence of tasks to execute
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Print a greeting
+        run: echo "Hello, world! The workflow is running successfully."
+
+      - name: Display current server time
+        run: date
